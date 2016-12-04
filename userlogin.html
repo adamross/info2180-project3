@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>CheapoMail</title>
+	<link rel="stylesheet" type="text/css" href="userlogin.css"/>
+</head>
+
+<body>
+
+<ul>
+  <li><a class="active" href="#home"><strong>CheapoMail</strong></a></li>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+<form action="adduser.php" method="post">
+
+  <div class="imgcontainer">
+    <h2>Login Form</h2>
+    <img src="https://image-store.slidesharecdn.com/cda0d682-1c66-4c6d-b79d-f5031655d879-large.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <select class="select" name="Type">
+        <option value="admin">Admin</option>
+        <option value="User">User</option>
+        
+     </select> </br>
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Adam Fin" name="username" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder=" " name="password" required>
+        
+    <button type="submit" name="login" value="login">Login</button><br/>
+    <input type="checkbox" checked="checked"> Remember me
+    <span class="psw">Forgot <a href="#">password</a>?</span>
+  </div>
+</div>
+</form>
+
+</body>
+</html>

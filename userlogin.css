@@ -1,0 +1,109 @@
+form {
+    border: 3px solid #f1f1f1;
+  
+}
+h2{
+    text-align: center;
+    color:blue;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #1944ff;
+    color: white;
+    padding: 10px 10px;
+    margin: 8px 25% 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
+
+.select{
+    margin: 8px 35% 0;
+    width: 75px;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+    width: 30%;
+    margin: 0 50% 0 35%;
+}
+
+span.psw {
+    float: right;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+       margin: 0 50% 0 35%;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #101010;
+}
+
+.incorrect{
+    background-color: #ff4d50;
+}
+
+.correct{
+    background-color: #00FF00;
+}
+
+#submit_form{
+    padding: 5px 5px 5px 5px;
+    width:100px;
+    background-color: #1944ff;
+    color: white;
+}
