@@ -37,4 +37,4 @@ date date
 );
 
 INSERT INTO Message_read(id, message_id, reader_id, date) VALUES
-(1, 1, 1, CURDATE());
+(1, 1, 1, CURDATE());pent

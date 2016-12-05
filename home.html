@@ -73,22 +73,35 @@
           
                  $results4 = $stmt4->fetchAll(PDO::FETCH_ASSOC);
                  foreach ($results4 as $row4) {
-                  
                  
                        $sender = $row4[firstname] . ' ' . $row4[lastname] ;
                  }
-           
-	       
-    	        echo '
-    	        <tr>     
-    	        <td>'. $row['date_sent'] .'</td>
-           	    <td>'. $sender . '</td>
-           	    <td>'. $row['subject'] .'</td>
-                <td>'. $row['body'] .'</td>    
-               
-        	    </tr> ';}
+             
+	             $msgid = $row['id'];
+	             $readerid = $row['user_id'];
+	            $stmt5 =  $conn->query("SELECT * FROM Message_read where message_id = '$msgid'");
+                 $results5 = $stmt5->fetch(PDO::FETCH_ASSOC);
+                 if($results5 == ''){
+                        // echo "THSI SI " . $results5;
+    	            echo '
+        	         <tr >     
+        	        <td> <strong>'. $row['date_sent'] .' </strong></td>
+               	    <td> <strong>'. $sender  . ' </strong></td>
+               	    <td onclick = "myAjax()"> <a href="readmessage.php?clicked=true&id='.$msgid.'&readerid='.$readerid.'"> <strong>'. $row['subject'] .' </strong></a></td>
+                    <td> <strong>'. $row['body'] .'</strong></td>    
+                  
+            	    </tr> ';
+            	}else{
+            	     echo '
+        	         <tr >     
+        	        <td>'. $row['date_sent'] .' </td>
+               	    <td> '. $sender  . ' </td>
+               	    <td onclick = "myAjax()"> <a href="readmessage.php?clicked=true&id='.$msgid.'&readerid='.$readerid.'">'. $row['subject'] .' </a></td>
+                    <td> '. $row['body'] .'</td>  </tr> ';    
+            	}
+        	    
 	     
-		    }
+		       }}
 			catch(PDOException $e)
 		{	
 			echo "Error";

@@ -8,7 +8,7 @@ if(isset($_POST["login"]))
     
     try{
         //Create Connection With The Database
-      
+     
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
        
     	//echo "Connection Made";
@@ -24,7 +24,7 @@ if(isset($_POST["login"]))
         
         if($type == 'admin'){
           
-          
+      
              $stmt = $conn->query("SELECT * FROM User WHERE id = 1 ");   
              
 			
@@ -34,29 +34,33 @@ if(isset($_POST["login"]))
                    if($row['username'] == $username){
                       //echo "Username in database is:" . $row['username'] ;
                       //echo "Username is:" .  $username ;
-                      $ok = true;
+                      $usernameok = true;
                    }else {
                       //echo "Username in database is:" . $row['username'] ;
-                      //echo "Username is:" .  $username ;
-                       $ok=false;
+                     // echo "Username is:" .  $username ;
+                       $usernameok=false;
                    }
                    if($row['password'] == $hash){
                       //echo "Password in database is:" .$row['password'] ;
                       //echo "Password is:" .  $hash ;
-                       $ok = true;
+                       $passwordok = true;
                    }
                    else{
-                      //echo "Password in database is:" .$row['password'] ;
-                      //echo "Password is:" .  $hash ;
-                       $ok = false;
+                    //  echo "Password in database is:" .$row['password'] ;
+                     // echo "Password is:" .  $hash ;
+                       $passwordok = false;
                    }
-                 //echo $ok;  
+                // echo $ok;  
               }
-              if($ok == true) { 
+              if($usernameok == true && $passwordok ==true) { 
                  //echo "Admin" ;
                  include("adduserform.html"); 
                   
-              } 
+              }
+              else{
+               
+                  include("userlogin.html");
+              }
               
         }
         else{
@@ -68,11 +72,10 @@ if(isset($_POST["login"]))
                   
                  if($row['username'] == $username){
                     // echo "Username in database is:" . $row['username'] . "\n";
-                    //  echo "Username is:" .  $username  . "\n" ;
-                      $ok = true;
+                    $ok = true;
                    }else {
-                    // echo "Username in database is:" . $row['username']  . "\n" ;
-                     // echo "Username is:" .  $username . "\n" ;
+                   // echo "Username in database is:" . $row['username']  . "\n" ;
+                    // echo "Username is:" .  $username . "\n" ;
                        $ok=false;
                    }
                    if($row['password'] == $hash){
@@ -81,8 +84,8 @@ if(isset($_POST["login"]))
                        $ok = true;
                    }
                    else{
-                    // echo "Password in database is:" .$row['password'] . "\n";
-                     //echo "Password is:" .  $hash. "\n" ;
+                  //  echo "Password in database is:" .$row['password'] . "\n";
+                    // echo "Password is:" .  $hash. "\n" ;
                        $ok = false;
                    }
                    
@@ -92,12 +95,13 @@ if(isset($_POST["login"]))
               if($userfound) { 
                         //echo "Everything is ok";
                         session_start();
-                     
+
                         $_SESSION["username"] = $username;
                        
                         include("home.html");
               }
               else {
+               
                    include("userlogin.html");
               }
               

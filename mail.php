@@ -16,7 +16,7 @@ if(isset($_POST["submit"]))
 
 	
 		//assign variables
-        $recipient = $_POST['username'];
+  $recipient = $_POST['username'];
 		$subject = $_POST['subject'];
 		$message = $_POST['message'];
 	

@@ -51,7 +51,7 @@ function Validate()
 
 
         var PassW= document.forms["p2"]["PassW"].value;
-        var patt1 = /^(?=.*[A-Zaz])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/i;
+        var patt1 = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/igm;
          if (( PassW == "") || ( patt1.test(PassW.value == false)) ) {
         
          	alert("Please Enter Your Password! It must have a capital letter, a number, and a special character");
@@ -92,3 +92,4 @@ function Validate()
         
     return (true);
     }
+
