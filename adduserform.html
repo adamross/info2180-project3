@@ -3,9 +3,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>User creation form</title>
-    	<link rel="stylesheet" type="text/css" href="userlogin.css"/>
+    <link rel="stylesheet" type="text/css" href="userlogin.css"/>
 	<script src="userform.js" type="text/javascript"> </script>
-
 </head>
 
 <body>
@@ -18,8 +17,8 @@
   <li><a href="#about">About</a></li>
    <li><a href="logout.php">Logout</a></li>
 </ul>
-
-    <p> <b> Add User </b> </p>
+<div class="container">
+    <h2> <b> Add User </b> </h2>
 	<form name="p2" action= "createuser.php" method="post" onsubmit= "return Validate()">
     <p> First Name: <br/> <input type ="text" name="firstN" id="firstN"/> </p>
 
@@ -35,7 +34,7 @@
 
 	<p> <input id="submit_form" type="submit" name="submit" value= "Submit"/> </p>
 </form>
-
+</div>
 </body>
 
 </html>

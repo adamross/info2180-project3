@@ -18,7 +18,7 @@
   <li><a href="#about">About</a></li>
    <li><a href="logout.php">Logout</a></li>
 </ul>
-    <a href="composemail.html">Compose Mail Here</a>
+    <a id="compose" href="composemail.html">Compose Mail Here</a>
     
     
     <h2>Latest Email </h2>
@@ -66,7 +66,20 @@
 	        $stmt1 = $conn->query("SELECT * FROM Message WHERE recipient_id = '$user_id' ORDER BY date_sent desc LIMIT 10 ");
 			$results2 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 			
-		
+		    $stmt6 = $conn->query("SELECT * FROM Message WHERE recipient_id = '$user_id' ORDER BY date_sent desc LIMIT 1");
+            $results6 = $stmt6->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($results6 as $row){
+                $msgid = $row['id'];
+                $stmt5 =  $conn->query("SELECT * FROM Message_read where message_id = '$msgid'");
+                $results5 = $stmt5->fetch(PDO::FETCH_ASSOC);
+                if ($results5 == ''){
+                    echo 
+                    '<script type "text/javascript">
+                    alert("NEW MESSAGE");
+                    </script>';
+                }
+                
+            }
 	        foreach ($results2 as $row) {
 	            $recipient=$row['user_id'];
 	            $stmt4 = $conn->query("SELECT * FROM User WHERE id = '$recipient'");

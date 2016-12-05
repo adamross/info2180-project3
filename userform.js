@@ -8,6 +8,7 @@ function Validate()
     	document.getElementById("firstN").style.borderColor="#ff4d50";
 
         alert(" Please Enter Your First Name");
+        document.getElementById("firstN").focus();
 
         return false;
     }
@@ -24,6 +25,7 @@ function Validate()
      	document.getElementById("lastN").style.borderColor="#ff4d50";
     
      	alert("Please Enter Your Last Name");
+     	document.getElementById("lastN").focus();
     
      	return false;
      }
@@ -39,6 +41,7 @@ function Validate()
      	document.getElementById("userN").style.borderColor="#ff4d50";
     
      	alert("Please Enter Your User Name");
+     	document.getElementById("userN").focus();
     
      	return false;
      }
@@ -57,6 +60,7 @@ function Validate()
          	alert("Please Enter Your Password! It must have a capital letter, a number, and a special character");
         
          	document.getElementById('PassW').style.borderColor="#ff4d50";
+         	document.getElementById("PassW").focus();
         
          	return false;
          }
@@ -72,6 +76,7 @@ function Validate()
          	alert(" Please Confirm Your Password!");
         
          	document.getElementById('PassC').style.borderColor="#ff4d50";
+         	document.getElementById("PassC").focus();
         
          	return false;
          }
@@ -84,6 +89,8 @@ function Validate()
          {
          	alert("Password Does Not Match!");
          	document.getElementById('PassC').style.borderColor="#ff4d50";
+         	document.getElementById("PassW").focus();
+         	document.getElementById("PassC").focus();
             return false;
         }
         else {

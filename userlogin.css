@@ -107,3 +107,9 @@ li a:hover {
     background-color: #1944ff;
     color: white;
 }
+
+#compose{
+    font-weight: bold;
+    color: black;
+    font-size: 15px;
+}
